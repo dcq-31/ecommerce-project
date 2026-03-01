@@ -10,6 +10,22 @@ export default {
   ],
   theme: {
     extend: {
+      keyframes: {
+        fadeIn: { from: { opacity: "0" }, to: { opacity: "1" } },
+blink: {
+          "0%": { opacity: "0.2" },
+          "20%": { opacity: "1" },
+          "100%": { opacity: "0.2" },
+        },
+        slideProgress: {
+          "0%": { width: "0%" },
+          "100%": { width: "100%" },
+        },
+      },
+      animation: {
+        fadeIn: "fadeIn .3s ease-in-out",
+blink: "blink 1.4s both infinite",
+      },
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
@@ -59,5 +75,9 @@ export default {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    require("@tailwindcss/typography"),
+    require("@tailwindcss/container-queries"),
+  ],
 } satisfies Config;
