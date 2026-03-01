@@ -1,6 +1,8 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Suspense } from "react";
 
+export const metadata = { title: "Error" };
+
 async function ErrorContent({
   searchParams,
 }: {
@@ -12,11 +14,11 @@ async function ErrorContent({
     <>
       {params?.error ? (
         <p className="text-sm text-muted-foreground">
-          Code error: {params.error}
+          Error de código: {params.error}
         </p>
       ) : (
         <p className="text-sm text-muted-foreground">
-          An unspecified error occurred.
+          Ocurrió un error inesperado.
         </p>
       )}
     </>
@@ -34,8 +36,8 @@ export default function Page({
         <div className="flex flex-col gap-6">
           <Card>
             <CardHeader>
-              <CardTitle className="text-2xl">
-                Sorry, something went wrong.
+              <CardTitle className="text-xl sm:text-2xl">
+                Lo sentimos, algo salió mal.
               </CardTitle>
             </CardHeader>
             <CardContent>

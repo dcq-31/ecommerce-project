@@ -1,29 +1,29 @@
 import Link from "next/link";
-import { Button } from "./ui/button";
 import { createClient } from "@/lib/supabase/server";
 import { LogoutButton } from "./logout-button";
+import { UserIcon } from "@heroicons/react/24/outline";
 
 export async function AuthButton() {
   const supabase = await createClient();
 
-  // You can also use getUser() which will be slower.
   const { data } = await supabase.auth.getClaims();
 
   const user = data?.claims;
 
   return user ? (
-    <div className="flex items-center gap-4">
-      Hey, {user.email}!
+    <div className="flex items-center gap-3">
+      <span className="hidden text-sm text-neutral-600 sm:inline dark:text-neutral-400">
+        Hola, {user.email?.split("@")[0]}!
+      </span>
       <LogoutButton />
     </div>
   ) : (
-    <div className="flex gap-2">
-      <Button asChild size="sm" variant={"outline"}>
-        <Link href="/auth/login">Sign in</Link>
-      </Button>
-      <Button asChild size="sm" variant={"default"}>
-        <Link href="/auth/sign-up">Sign up</Link>
-      </Button>
-    </div>
+    <Link
+      href="/auth/login"
+      aria-label="Iniciar sesión"
+      className="flex h-9 w-9 items-center justify-center rounded-md border border-neutral-300 text-neutral-600 transition-colors hover:border-primary hover:text-primary dark:border-neutral-600 dark:text-neutral-400"
+    >
+      <UserIcon className="h-5 w-5" />
+    </Link>
   );
 }
