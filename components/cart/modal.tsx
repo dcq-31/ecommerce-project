@@ -114,7 +114,6 @@ export default function CartModal({ phoneNumber }: { phoneNumber?: string }) {
             leaveTo="translate-x-full"
           >
             <DialogPanel className="fixed bottom-0 right-0 top-0 flex h-full w-full flex-col border-l border-neutral-300 bg-white/90 p-6 backdrop-blur-xl md:w-[420px] dark:border-neutral-700 dark:bg-neutral-950/90">
-
               {/* ── Header ──────────────────────────────────────────────── */}
               <div className="flex items-center justify-between">
                 <p className="text-lg font-semibold text-neutral-900 dark:text-neutral-100">
@@ -123,7 +122,7 @@ export default function CartModal({ phoneNumber }: { phoneNumber?: string }) {
                 <button
                   aria-label="Cerrar cesta"
                   onClick={closeCart}
-                  className="flex h-9 w-9 items-center justify-center rounded-lg border border-neutral-300 text-neutral-500 transition-colors hover:border-neutral-500 hover:text-neutral-900 dark:border-neutral-600 dark:text-neutral-400 dark:hover:border-neutral-400 dark:hover:text-neutral-100"
+                  className="flex h-9 w-9 items-center justify-center rounded-lg border border-neutral-400 text-neutral-500 transition-colors hover:border-neutral-500 hover:text-neutral-900 dark:border-neutral-500 dark:text-neutral-400 dark:hover:border-neutral-400 dark:hover:text-neutral-100"
                 >
                   <XMarkIcon className="h-5 w-5" />
                 </button>
@@ -154,7 +153,8 @@ export default function CartModal({ phoneNumber }: { phoneNumber?: string }) {
                     <p className="text-xl font-bold">¡Casi listo!</p>
                     <p className="mt-2 text-sm text-neutral-500 dark:text-neutral-400">
                       Se abrió WhatsApp con tu pedido. Para completar la compra,
-                      envía el mensaje al administrador y él procesará tu pedido.
+                      envía el mensaje al administrador y él procesará tu
+                      pedido.
                     </p>
                   </div>
                   <div className="mt-4 flex w-full flex-col gap-2">
@@ -169,7 +169,7 @@ export default function CartModal({ phoneNumber }: { phoneNumber?: string }) {
                     </button>
                     <button
                       onClick={closeCart}
-                      className="w-full rounded-full border border-neutral-400 p-3 text-sm font-medium hover:bg-neutral-100 dark:border-neutral-600 dark:hover:bg-neutral-800"
+                      className="w-full rounded-full border border-neutral-400 p-3 text-sm font-medium hover:bg-neutral-100 dark:border-neutral-500 dark:hover:bg-neutral-800"
                     >
                       Mantener cesta
                     </button>
@@ -186,12 +186,12 @@ export default function CartModal({ phoneNumber }: { phoneNumber?: string }) {
                       .map((item) => (
                         <li
                           key={item.productId}
-                          className="border-b border-neutral-300 py-4 dark:border-neutral-700"
+                          className="border-b border-neutral-400 py-4 dark:border-neutral-600"
                         >
                           <div className="flex gap-3">
                             {/* Image */}
                             <div className="relative flex-none">
-                              <div className="relative h-24 w-24 overflow-hidden rounded-xl border border-neutral-300 bg-neutral-50 dark:border-neutral-700 dark:bg-neutral-900">
+                              <div className="relative h-24 w-24 overflow-hidden rounded-xl border border-neutral-400 bg-neutral-50 dark:border-neutral-600 dark:bg-neutral-900">
                                 {item.image ? (
                                   <Image
                                     fill
@@ -222,17 +222,24 @@ export default function CartModal({ phoneNumber }: { phoneNumber?: string }) {
                                 className="text-sm font-semibold text-primary"
                                 amount={String(
                                   (
-                                    parseFloat(item.price.amount) * item.quantity
+                                    parseFloat(item.price.amount) *
+                                    item.quantity
                                   ).toFixed(2),
                                 )}
                                 currencyCode={item.price.currencyCode}
                               />
-                              <div className="flex h-8 items-center self-start rounded-full border border-neutral-300 dark:border-neutral-600">
-                                <EditItemQuantityButton item={item} type="minus" />
+                              <div className="flex h-8 items-center self-start rounded-full border border-neutral-400 dark:border-neutral-500">
+                                <EditItemQuantityButton
+                                  item={item}
+                                  type="minus"
+                                />
                                 <span className="w-6 text-center text-sm font-medium">
                                   {item.quantity}
                                 </span>
-                                <EditItemQuantityButton item={item} type="plus" />
+                                <EditItemQuantityButton
+                                  item={item}
+                                  type="plus"
+                                />
                               </div>
                             </div>
                           </div>
@@ -244,11 +251,17 @@ export default function CartModal({ phoneNumber }: { phoneNumber?: string }) {
                   <div className="pt-4">
                     <div className="mb-3 space-y-2 text-sm">
                       <div className="flex items-center justify-between">
-                        <p className="font-bold text-neutral-900 dark:text-neutral-100">Envío</p>
-                        <p className="font-bold text-neutral-900 dark:text-neutral-100">Calculado al confirmar</p>
+                        <p className="font-bold text-neutral-900 dark:text-neutral-100">
+                          Envío
+                        </p>
+                        <p className="font-bold text-neutral-900 dark:text-neutral-100">
+                          Calculado al confirmar
+                        </p>
                       </div>
-                      <div className="flex items-center justify-between border-t border-neutral-300 pt-2 dark:border-neutral-700">
-                        <p className="font-semibold text-neutral-900 dark:text-neutral-100">Total</p>
+                      <div className="flex items-center justify-between border-t border-neutral-400 pt-2 dark:border-neutral-600">
+                        <p className="font-semibold text-neutral-900 dark:text-neutral-100">
+                          Total
+                        </p>
                         <p className="font-bold text-neutral-900 dark:text-neutral-100">
                           $ {fmtMoney(convertedTotal)}{" "}
                           <span className="font-bold text-neutral-900 dark:text-neutral-100">

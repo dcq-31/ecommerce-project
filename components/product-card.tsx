@@ -31,7 +31,7 @@ export function ProductCard({
   const isAdmin = Boolean(actions);
 
   return (
-    <div className="group flex flex-col overflow-hidden rounded-xl border border-neutral-300 bg-white shadow transition-all duration-300 hover:shadow-xl dark:border-neutral-700 dark:bg-neutral-900">
+    <div className="group flex flex-col overflow-hidden rounded-xl border border-neutral-400 bg-white shadow transition-all duration-300 hover:shadow-xl dark:border-neutral-700 dark:bg-neutral-900">
       {/* ── Image area ─────────────────────────────────────────────────────── */}
       <div className="relative aspect-square overflow-hidden bg-neutral-100 dark:bg-neutral-800">
         {/* Full-area link */}
@@ -114,7 +114,7 @@ export function ProductCard({
             currencyCode={product.price.currencyCode}
             className="text-sm font-semibold text-primary"
           />
-          <div className="flex items-center justify-end gap-0.5 pt-0.5 border-t border-neutral-200 dark:border-neutral-700">
+          <div className="flex items-center justify-end gap-0.5 pt-0.5 border-t border-neutral-300 dark:border-neutral-600">
             {actions}
           </div>
         </div>

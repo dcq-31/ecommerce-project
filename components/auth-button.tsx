@@ -21,7 +21,7 @@ export async function AuthButton() {
     <Link
       href="/auth/login"
       aria-label="Iniciar sesión"
-      className="flex h-9 w-9 items-center justify-center rounded-md border border-neutral-300 text-neutral-600 transition-colors hover:border-primary hover:text-primary dark:border-neutral-600 dark:text-neutral-400"
+      className="flex h-9 w-9 items-center justify-center rounded-md border border-neutral-400 text-neutral-600 transition-colors hover:border-primary hover:text-primary dark:border-neutral-500 dark:text-neutral-400"
     >
       <UserIcon className="h-5 w-5" />
     </Link>

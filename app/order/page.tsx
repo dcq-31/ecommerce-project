@@ -75,7 +75,7 @@ export default async function OrderPage({
 
       {/* ── Items ────────────────────────────────────────────────────────── */}
       <section className="overflow-hidden rounded-2xl border border-neutral-300 bg-white shadow-sm dark:border-neutral-700 dark:bg-neutral-900">
-        <div className="flex items-center gap-2 border-b border-neutral-200 px-5 py-3.5 dark:border-neutral-700">
+        <div className="flex items-center gap-2 border-b border-neutral-300 px-5 py-3.5 dark:border-neutral-600">
           <ShoppingBagIcon className="h-4 w-4 text-neutral-400" />
           <h2 className="text-xs font-semibold uppercase tracking-wider text-neutral-500">
             Productos
@@ -116,9 +116,7 @@ export default async function OrderPage({
                   </p>
                   <p className="mt-0.5 text-xs text-neutral-400">
                     $ {fmtMoney(unitPrice)} {order.cur}
-                    {item.qty > 1 && (
-                      <span className="ml-1">× {item.qty}</span>
-                    )}
+                    {item.qty > 1 && <span className="ml-1">× {item.qty}</span>}
                   </p>
                 </div>
 
@@ -158,7 +156,6 @@ export default async function OrderPage({
           </div>
         </dl>
       </section>
-
     </div>
   );
 }

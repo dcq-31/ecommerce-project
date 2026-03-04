@@ -21,7 +21,7 @@ export function CurrencySelector() {
   return (
     <Listbox value={currency} onChange={setCurrency}>
       <div className="relative">
-        <ListboxButton className="flex h-9 items-center gap-1.5 rounded-md border border-neutral-300 bg-transparent px-2.5 text-sm text-neutral-600 transition-colors hover:border-primary focus:border-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-400">
+        <ListboxButton className="flex h-9 items-center gap-1.5 rounded-md border border-neutral-400 bg-transparent px-2.5 text-sm text-neutral-600 transition-colors hover:border-primary focus:border-primary focus:outline-none dark:border-neutral-500 dark:text-neutral-400">
           {selectedCurrency?.imageUrl && (
             <div className="relative h-4 w-4 flex-shrink-0 overflow-hidden rounded-full">
               <Image
@@ -36,7 +36,7 @@ export function CurrencySelector() {
           <ChevronUpDownIcon className="h-3.5 w-3.5 flex-shrink-0 text-neutral-400" />
         </ListboxButton>
 
-        <ListboxOptions className="absolute right-0 z-50 mt-1 min-w-full overflow-hidden rounded-md border border-neutral-300 bg-white py-1 shadow-lg focus:outline-none dark:border-neutral-700 dark:bg-neutral-900">
+        <ListboxOptions className="absolute right-0 z-50 mt-1 min-w-full overflow-hidden rounded-md border border-neutral-400 bg-white py-1 shadow-lg focus:outline-none dark:border-neutral-600 dark:bg-neutral-900">
           {currencies.map((cur) => (
             <ListboxOption
               key={cur.name}

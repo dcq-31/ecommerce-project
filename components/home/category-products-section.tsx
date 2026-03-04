@@ -29,7 +29,7 @@ function CategoryChip({
         "flex-none rounded-full px-4 py-2 text-sm font-medium transition-colors whitespace-nowrap disabled:cursor-wait",
         active
           ? "bg-primary text-primary-foreground"
-          : "border border-neutral-300 text-neutral-700 hover:border-primary hover:text-primary dark:border-neutral-600 dark:text-neutral-300 dark:hover:border-primary dark:hover:text-primary",
+          : "border border-neutral-400 text-neutral-700 hover:border-primary hover:text-primary dark:border-neutral-500 dark:text-neutral-300 dark:hover:border-primary dark:hover:text-primary",
       )}
     >
       {label}
@@ -55,7 +55,7 @@ function Pagination({
       <button
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
-        className="flex h-9 w-9 items-center justify-center rounded border border-neutral-300 text-sm disabled:opacity-40 hover:border-primary disabled:hover:border-neutral-300 dark:border-neutral-600 dark:disabled:hover:border-neutral-600"
+        className="flex h-9 w-9 items-center justify-center rounded border border-neutral-400 text-sm disabled:opacity-40 hover:border-primary disabled:hover:border-neutral-400 dark:border-neutral-500 dark:disabled:hover:border-neutral-500"
         aria-label="Página anterior"
       >
         ‹
@@ -69,7 +69,7 @@ function Pagination({
             "flex h-9 w-9 items-center justify-center rounded text-sm font-medium transition-colors",
             page === currentPage
               ? "bg-primary text-primary-foreground"
-              : "border border-neutral-300 hover:border-primary dark:border-neutral-600",
+              : "border border-neutral-400 hover:border-primary dark:border-neutral-500",
           )}
           aria-current={page === currentPage ? "page" : undefined}
         >
@@ -80,7 +80,7 @@ function Pagination({
       <button
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
-        className="flex h-9 w-9 items-center justify-center rounded border border-neutral-300 text-sm disabled:opacity-40 hover:border-primary disabled:hover:border-neutral-300 dark:border-neutral-600 dark:disabled:hover:border-neutral-600"
+        className="flex h-9 w-9 items-center justify-center rounded border border-neutral-400 text-sm disabled:opacity-40 hover:border-primary disabled:hover:border-neutral-400 dark:border-neutral-500 dark:disabled:hover:border-neutral-500"
         aria-label="Siguiente página"
       >
         ›
