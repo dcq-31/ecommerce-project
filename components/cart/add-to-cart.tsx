@@ -23,14 +23,14 @@ export function AddToCart({ product }: { product: Product }) {
 
   return (
     <button
-      aria-label="Agregar a la cesta"
-      onClick={() => { addToCart(product); toast.success(`${product.title} agregado a la cesta.`); }}
+      aria-label="Agregar al carrito"
+      onClick={() => { addToCart(product); toast.success(`${product.title} agregado al carrito.`); }}
       className={clsx(buttonClasses, "hover:opacity-90")}
     >
       <div className="absolute left-0 ml-4">
         <PlusIcon className="h-5" />
       </div>
-      Agregar a la cesta
+      Agregar al carrito
     </button>
   );
 }

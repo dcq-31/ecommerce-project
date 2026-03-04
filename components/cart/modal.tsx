@@ -9,6 +9,7 @@ import {
 import {
   CheckCircleIcon,
   ShoppingBagIcon,
+  ShoppingCartIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 import Price from "components/price";
@@ -16,7 +17,7 @@ import { useCurrency } from "components/currency-context";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useCart } from "./cart-context";
 import { DeleteItemButton } from "./delete-item-button";
 import { EditItemQuantityButton } from "./edit-item-quantity-button";
@@ -38,10 +39,36 @@ export default function CartModal({ phoneNumber }: { phoneNumber?: string }) {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [checkoutDone, setCheckoutDone] = useState(false);
+  const didPushState = useRef(false);
+
+  // Sync cart panel open state with browser history so the back button closes it.
+  useEffect(() => {
+    if (!isOpen) return;
+
+    window.history.pushState({ cart: true }, "");
+    didPushState.current = true;
+
+    const onPopState = () => {
+      setIsOpen(false);
+      setCheckoutDone(false);
+      didPushState.current = false;
+    };
+
+    window.addEventListener("popstate", onPopState);
+    return () => window.removeEventListener("popstate", onPopState);
+  }, [isOpen]);
+
   const openCart = () => setIsOpen(true);
+
   const closeCart = () => {
-    setIsOpen(false);
-    setCheckoutDone(false);
+    if (didPushState.current) {
+      // Pop the synthetic history entry; the popstate handler closes the panel.
+      didPushState.current = false;
+      window.history.back();
+    } else {
+      setIsOpen(false);
+      setCheckoutDone(false);
+    }
   };
 
   const showButton = !HIDDEN_PATHS.some((p) => pathname.startsWith(p));
@@ -76,16 +103,18 @@ export default function CartModal({ phoneNumber }: { phoneNumber?: string }) {
     <>
       {showButton && (
         <button
-          aria-label="Abrir cesta"
+          aria-label="Abrir carrito"
           onClick={openCart}
           className="fixed bottom-6 right-6 z-40 flex h-16 w-16 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-lg shadow-primary/40 transition-all duration-200 hover:scale-110 hover:bg-primary/90 hover:shadow-xl hover:shadow-primary/50 active:scale-95"
         >
+          {/* Pulsing ring — more visible when cart has items */}
           {cart.totalQuantity > 0 && (
-            <span className="absolute inset-0 rounded-full animate-ping bg-primary/25" />
+            <span className="absolute inset-0 rounded-full animate-ping bg-primary/50" />
           )}
-          <ShoppingBagIcon className="h-8 w-8" />
+          <ShoppingCartIcon className="h-8 w-8" />
+          {/* Item count badge */}
           {cart.totalQuantity > 0 && (
-            <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-background text-[10px] font-bold text-primary shadow">
+            <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-white dark:bg-neutral-900 text-xs font-bold  text-neutral-800 dark:text-white shadow-md ring-2 ring-primary">
               {cart.totalQuantity > 99 ? "99+" : cart.totalQuantity}
             </span>
           )}
@@ -117,10 +146,10 @@ export default function CartModal({ phoneNumber }: { phoneNumber?: string }) {
               {/* ── Header ──────────────────────────────────────────────── */}
               <div className="flex items-center justify-between">
                 <p className="text-lg font-semibold text-neutral-900 dark:text-neutral-100">
-                  Mi cesta
+                  Mi carrito
                 </p>
                 <button
-                  aria-label="Cerrar cesta"
+                  aria-label="Cerrar carrito"
                   onClick={closeCart}
                   className="flex h-9 w-9 items-center justify-center rounded-lg border border-neutral-400 text-neutral-500 transition-colors hover:border-neutral-500 hover:text-neutral-900 dark:border-neutral-500 dark:text-neutral-400 dark:hover:border-neutral-400 dark:hover:text-neutral-100"
                 >
@@ -135,7 +164,7 @@ export default function CartModal({ phoneNumber }: { phoneNumber?: string }) {
                     <ShoppingBagIcon className="h-10 w-10 text-neutral-400" />
                   </div>
                   <p className="text-xl font-semibold text-neutral-900 dark:text-neutral-100">
-                    Tu cesta está vacía.
+                    Tu carrito está vacío.
                   </p>
                   <p className="text-sm text-neutral-500 dark:text-neutral-400">
                     Agrega productos para comenzar.
@@ -165,13 +194,13 @@ export default function CartModal({ phoneNumber }: { phoneNumber?: string }) {
                       }}
                       className="w-full rounded-full bg-primary p-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90"
                     >
-                      Vaciar cesta y cerrar
+                      Vaciar carrito y cerrar
                     </button>
                     <button
                       onClick={closeCart}
                       className="w-full rounded-full border border-neutral-400 p-3 text-sm font-medium hover:bg-neutral-100 dark:border-neutral-500 dark:hover:bg-neutral-800"
                     >
-                      Mantener cesta
+                      Mantener carrito
                     </button>
                   </div>
                 </div>

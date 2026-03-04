@@ -18,8 +18,8 @@ export default function OpenCart({
       />
 
       {quantity ? (
-        <div className="absolute right-0 top-0 -mr-2 -mt-2 h-4 w-4 rounded-sm bg-primary text-[11px] font-medium text-primary-foreground">
-          {quantity}
+        <div className="absolute -right-2 -top-2 flex h-5 w-5 items-center justify-center rounded-full bg-white text-[10px] font-bold text-primary shadow ring-2 ring-primary dark:bg-neutral-950">
+          {quantity > 99 ? "99+" : quantity}
         </div>
       ) : null}
     </div>

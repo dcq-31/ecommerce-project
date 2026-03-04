@@ -10,7 +10,7 @@ export function DeleteItemButton({ item }: { item: CartItem }) {
   return (
     <button
       type="button"
-      aria-label="Eliminar artículo de la cesta"
+      aria-label="Eliminar artículo del carrito"
       onClick={() => removeItem(item.productId)}
       className="flex h-[24px] w-[24px] items-center justify-center rounded-full bg-neutral-500"
     >

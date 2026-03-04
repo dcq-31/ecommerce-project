@@ -89,7 +89,7 @@ export function ProductCard({
           (product.availableForSale ? (
             <button
               type="button"
-              aria-label="Agregar a la cesta"
+              aria-label="Agregar al carrito"
               onClick={() => addToCart(product)}
               className="absolute bottom-2.5 right-2.5 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-md transition-all duration-150 hover:scale-110 active:scale-90"
             >
