@@ -27,7 +27,7 @@ export function ProductDescription({ product }: { product: Product }) {
         />
       </div>
 
-      <div className="my-6 border-t border-neutral-300 dark:border-neutral-700" />
+      <div className="my-6 border-t border-neutral-400 dark:border-neutral-600" />
 
       <AddToCart product={product} />
     </div>
