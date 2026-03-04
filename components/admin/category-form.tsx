@@ -33,7 +33,7 @@ export function CategoryForm({ category }: { category?: Category }) {
   }
 
   const fieldClass =
-    "w-full rounded-md border border-neutral-400 bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary dark:border-neutral-600 dark:bg-neutral-900";
+    "w-full rounded-md border border-neutral-400 bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary dark:border-neutral-500 dark:bg-neutral-900";
   const labelClass =
     "block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-1";
 
@@ -73,7 +73,7 @@ export function CategoryForm({ category }: { category?: Category }) {
         <button
           type="button"
           onClick={() => router.push("/admin/categories")}
-          className="rounded-full border border-neutral-400 px-6 py-2 text-sm font-medium hover:bg-neutral-100 dark:border-neutral-600 dark:hover:bg-neutral-800"
+          className="rounded-full border border-neutral-400 px-6 py-2 text-sm font-medium hover:bg-neutral-100 dark:border-neutral-500 dark:hover:bg-neutral-800"
         >
           Cancelar
         </button>

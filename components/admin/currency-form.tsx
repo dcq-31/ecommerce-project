@@ -53,7 +53,7 @@ export function CurrencyForm({ currency }: { currency?: Currency }) {
   }
 
   const fieldClass =
-    "w-full rounded-md border border-neutral-400 bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary dark:border-neutral-600 dark:bg-neutral-900";
+    "w-full rounded-md border border-neutral-400 bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary dark:border-neutral-500 dark:bg-neutral-900";
   const labelClass =
     "block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-1";
   const readonlyClass =
@@ -127,7 +127,7 @@ export function CurrencyForm({ currency }: { currency?: Currency }) {
           </div>
         )}
 
-        <label className="flex cursor-pointer items-center justify-center rounded-md border border-dashed border-neutral-400 bg-neutral-50 px-4 py-6 text-sm text-neutral-500 transition hover:bg-neutral-100 dark:border-neutral-600 dark:bg-neutral-900 dark:hover:bg-neutral-800">
+        <label className="flex cursor-pointer items-center justify-center rounded-md border border-dashed border-neutral-400 bg-neutral-50 px-4 py-6 text-sm text-neutral-500 transition hover:bg-neutral-100 dark:border-neutral-500 dark:bg-neutral-900 dark:hover:bg-neutral-800">
           <span>
             {previewUrl ? "Reemplazar imagen" : "Haz clic para subir una imagen"}
           </span>
@@ -167,7 +167,7 @@ export function CurrencyForm({ currency }: { currency?: Currency }) {
         <button
           type="button"
           onClick={() => router.push("/admin/currencies")}
-          className="rounded-full border border-neutral-400 px-6 py-2 text-sm font-medium hover:bg-neutral-100 dark:border-neutral-600 dark:hover:bg-neutral-800"
+          className="rounded-full border border-neutral-400 px-6 py-2 text-sm font-medium hover:bg-neutral-100 dark:border-neutral-500 dark:hover:bg-neutral-800"
         >
           Cancelar
         </button>

@@ -57,7 +57,7 @@ export default async function AdminOrderDetailPage({
       <div className="mb-6 flex items-center gap-4">
         <Link
           href="/admin/orders"
-          className="inline-flex items-center gap-1.5 rounded-full border border-neutral-300 px-4 py-2 text-sm font-medium text-neutral-700 transition-colors hover:border-neutral-500 hover:text-neutral-900 dark:border-neutral-600 dark:text-neutral-300 dark:hover:border-neutral-400 dark:hover:text-neutral-100"
+          className="inline-flex items-center gap-1.5 rounded-full border border-neutral-400 px-4 py-2 text-sm font-medium text-neutral-700 transition-colors hover:border-neutral-500 hover:text-neutral-900 dark:border-neutral-500 dark:text-neutral-300 dark:hover:border-neutral-400 dark:hover:text-neutral-100"
         >
           <ArrowLeftIcon className="h-4 w-4" />
           Pedidos

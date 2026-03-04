@@ -68,9 +68,10 @@ function OrderCard({
 
   return (
     <div className="group flex flex-col overflow-hidden rounded-xl border border-neutral-300 bg-white shadow transition-all duration-300 hover:shadow-xl dark:border-neutral-600 dark:bg-neutral-900">
-
       {/* ── Gradient header ──────────────────────────────────────────────────── */}
-      <div className={`relative overflow-hidden bg-gradient-to-br ${gradient} px-5 pb-5 pt-6`}>
+      <div
+        className={`relative overflow-hidden bg-gradient-to-br ${gradient} px-5 pb-5 pt-6`}
+      >
         {/* Date badge */}
         <span className="absolute right-3 top-3 rounded-full bg-black/25 px-2 py-0.5 text-xs font-semibold text-white/90 backdrop-blur-sm">
           {date}

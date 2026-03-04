@@ -57,7 +57,7 @@ export function BannerForm({ banner }: { banner?: Banner }) {
   }
 
   const fieldClass =
-    "w-full rounded-md border border-neutral-400 bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary dark:border-neutral-600 dark:bg-neutral-900";
+    "w-full rounded-md border border-neutral-400 bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary dark:border-neutral-500 dark:bg-neutral-900";
   const labelClass =
     "block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-1";
 
@@ -123,7 +123,7 @@ export function BannerForm({ banner }: { banner?: Banner }) {
         <button
           type="button"
           onClick={() => fileInputRef.current?.click()}
-          className="flex w-full items-center justify-center gap-2 rounded-lg border-2 border-dashed border-neutral-400 px-4 py-5 text-sm text-neutral-500 transition hover:border-primary hover:text-primary dark:border-neutral-600 dark:hover:border-primary dark:hover:text-primary"
+          className="flex w-full items-center justify-center gap-2 rounded-lg border-2 border-dashed border-neutral-400 px-4 py-5 text-sm text-neutral-500 transition hover:border-primary hover:text-primary dark:border-neutral-500 dark:hover:border-primary dark:hover:text-primary"
         >
           <PhotoIcon className="h-5 w-5" />
           {currentImageUrl ? "Cambiar imagen" : "Seleccionar imagen"}
@@ -163,7 +163,7 @@ export function BannerForm({ banner }: { banner?: Banner }) {
         <button
           type="button"
           onClick={() => router.push("/admin/banners")}
-          className="rounded-full border border-neutral-400 px-6 py-2 text-sm font-medium hover:bg-neutral-100 dark:border-neutral-600 dark:hover:bg-neutral-800"
+          className="rounded-full border border-neutral-400 px-6 py-2 text-sm font-medium hover:bg-neutral-100 dark:border-neutral-500 dark:hover:bg-neutral-800"
         >
           Cancelar
         </button>

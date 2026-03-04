@@ -93,7 +93,7 @@ function AdminCardActions({ product }: { product: Product }) {
           href={`/admin/products/${product.id}/edit`}
           aria-label="Editar producto"
           title="Editar"
-          className="flex h-8 w-8 items-center justify-center rounded-lg border border-neutral-200 bg-neutral-50 text-neutral-500 shadow-sm transition-all hover:border-primary hover:bg-primary hover:text-white dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-400 dark:hover:border-primary dark:hover:bg-primary dark:hover:text-white"
+          className="flex h-8 w-8 items-center justify-center rounded-lg border border-neutral-300 bg-neutral-50 text-neutral-500 shadow-sm transition-all hover:border-primary hover:bg-primary hover:text-white dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-400 dark:hover:border-primary dark:hover:bg-primary dark:hover:text-white"
         >
           <PencilSquareIcon className="h-4 w-4" />
         </Link>
@@ -105,7 +105,7 @@ function AdminCardActions({ product }: { product: Product }) {
           className={
             product.availableForSale
               ? "border-emerald-200 bg-emerald-50 text-emerald-600 hover:border-emerald-500 hover:bg-emerald-500 hover:text-white dark:border-emerald-800/50 dark:bg-emerald-950/40 dark:text-emerald-400"
-              : "border-neutral-200 bg-neutral-50 text-neutral-400 hover:border-emerald-400 hover:bg-emerald-50 hover:text-emerald-600 dark:border-neutral-700 dark:bg-neutral-800"
+              : "border-neutral-300 bg-neutral-50 text-neutral-400 hover:border-emerald-400 hover:bg-emerald-50 hover:text-emerald-600 dark:border-neutral-600 dark:bg-neutral-800"
           }
         >
           {product.availableForSale ? (
@@ -119,7 +119,7 @@ function AdminCardActions({ product }: { product: Product }) {
           label="Eliminar producto"
           onClick={() => setConfirmOpen(true)}
           disabled={deleting}
-          className="border-neutral-200 bg-neutral-50 text-neutral-500 shadow-sm hover:border-destructive hover:bg-destructive hover:text-white dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-400"
+          className="border-neutral-300 bg-neutral-50 text-neutral-500 shadow-sm hover:border-destructive hover:bg-destructive hover:text-white dark:border-neutral-600 dark:bg-neutral-800 dark:text-neutral-400"
         >
           <TrashIcon className="h-4 w-4" />
         </IconButton>
@@ -149,7 +149,7 @@ function CategoryChip({
         "flex-none rounded-full px-4 py-2 text-sm font-medium transition-colors whitespace-nowrap disabled:cursor-wait",
         active
           ? "bg-primary text-primary-foreground"
-          : "border border-neutral-300 text-neutral-700 hover:border-primary hover:text-primary dark:border-neutral-600 dark:text-neutral-300 dark:hover:border-primary dark:hover:text-primary",
+          : "border border-neutral-400 text-neutral-700 hover:border-primary hover:text-primary dark:border-neutral-500 dark:text-neutral-300 dark:hover:border-primary dark:hover:text-primary",
       )}
     >
       {label}

@@ -106,7 +106,7 @@ export function ProductForm({
   }
 
   const fieldClass =
-    "w-full rounded-md border border-neutral-400 bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary dark:border-neutral-600 dark:bg-neutral-900";
+    "w-full rounded-md border border-neutral-400 bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary dark:border-neutral-500 dark:bg-neutral-900";
   const labelClass =
     "block text-sm font-medium text-neutral-700 dark:text-neutral-300 mb-1";
 
@@ -163,7 +163,7 @@ export function ProductForm({
               <ChevronUpDownIcon className="h-4 w-4 flex-shrink-0 text-neutral-400" />
             </ListboxButton>
 
-            <ListboxOptions className="absolute z-20 mt-1 max-h-60 w-full overflow-auto rounded-md border border-neutral-300 bg-white py-1 shadow-lg focus:outline-none dark:border-neutral-700 dark:bg-neutral-900">
+            <ListboxOptions className="absolute z-20 mt-1 max-h-60 w-full overflow-auto rounded-md border border-neutral-400 bg-white py-1 shadow-lg focus:outline-none dark:border-neutral-600 dark:bg-neutral-900">
               <ListboxOption
                 value={null}
                 className={({ focus }: { focus: boolean }) =>
@@ -226,7 +226,7 @@ export function ProductForm({
           type="checkbox"
           id="available_for_sale"
           defaultChecked={product?.availableForSale ?? true}
-          className="h-4 w-4 rounded border-neutral-300"
+          className="h-4 w-4 rounded border-neutral-400"
         />
         <label htmlFor="available_for_sale" className="text-sm font-medium">
           Disponible para la venta
@@ -326,7 +326,7 @@ export function ProductForm({
         <button
           type="button"
           onClick={() => router.push("/admin/products")}
-          className="rounded-full border border-neutral-400 px-6 py-2 text-sm font-medium hover:bg-neutral-100 dark:border-neutral-600 dark:hover:bg-neutral-800"
+          className="rounded-full border border-neutral-400 px-6 py-2 text-sm font-medium hover:bg-neutral-100 dark:border-neutral-500 dark:hover:bg-neutral-800"
         >
           Cancelar
         </button>

@@ -46,7 +46,7 @@ export function AdminSidebar({ isAuthenticated }: { isAuthenticated: boolean }) 
       <button
         aria-label="Abrir menú de administración"
         onClick={() => setIsOpen(true)}
-        className="flex h-9 w-9 items-center justify-center rounded-lg border border-neutral-300 text-neutral-600 transition-colors hover:border-neutral-500 hover:text-neutral-900 dark:border-neutral-600 dark:text-neutral-400 dark:hover:border-neutral-400 dark:hover:text-neutral-100"
+        className="flex h-9 w-9 items-center justify-center rounded-lg border border-neutral-400 text-neutral-600 transition-colors hover:border-neutral-500 hover:text-neutral-900 dark:border-neutral-500 dark:text-neutral-400 dark:hover:border-neutral-400 dark:hover:text-neutral-100"
       >
         <Bars3Icon className="h-5 w-5" />
       </button>
@@ -87,7 +87,7 @@ export function AdminSidebar({ isAuthenticated }: { isAuthenticated: boolean }) 
                 <button
                   aria-label="Cerrar menú"
                   onClick={() => setIsOpen(false)}
-                  className="flex h-9 w-9 items-center justify-center rounded-lg border border-neutral-300 text-neutral-500 transition-colors hover:border-neutral-500 hover:text-neutral-900 dark:border-neutral-600 dark:text-neutral-400 dark:hover:border-neutral-400 dark:hover:text-neutral-100"
+                  className="flex h-9 w-9 items-center justify-center rounded-lg border border-neutral-400 text-neutral-500 transition-colors hover:border-neutral-500 hover:text-neutral-900 dark:border-neutral-500 dark:text-neutral-400 dark:hover:border-neutral-400 dark:hover:text-neutral-100"
                 >
                   <XMarkIcon className="h-5 w-5" />
                 </button>
