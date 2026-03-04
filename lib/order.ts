@@ -106,9 +106,5 @@ export function buildWhatsAppMessage(order: OrderData): string {
     `*Total: $${fmtMoney(total)} ${order.cur}*`,
   ];
 
-  if (order.rate !== 1) {
-    lines.push(`Cambio: 1 USD = ${order.rate} ${order.cur}`);
-  }
-
   return lines.join("\n");
 }
