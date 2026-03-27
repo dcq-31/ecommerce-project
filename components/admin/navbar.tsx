@@ -79,7 +79,7 @@ export function AdminSidebar({ isAuthenticated }: { isAuthenticated: boolean }) 
               {/* Header */}
               <div className="flex items-center justify-between">
                 <Link href="/admin" className="flex items-center gap-2.5">
-                  <LogoSquare size="sm" />
+                  <LogoSquare />
                   <span className="text-sm font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">
                     Admin
                   </span>
