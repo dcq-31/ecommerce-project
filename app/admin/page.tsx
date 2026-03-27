@@ -6,6 +6,7 @@ import {
   FolderIcon,
   PhotoIcon,
 } from "@heroicons/react/24/outline";
+import { CopyLinkButton } from "components/admin/copy-link-button";
 import { listOrders } from "lib/admin/order-actions";
 import { getBanners, getAllProducts, getCategories, getCurrencies } from "lib/products";
 import Link from "next/link";
@@ -109,6 +110,19 @@ export default async function AdminDashboardPage() {
           stats={[{ value: data.currencies.total, label: "Total" }]}
         />
 
+      </div>
+
+      {/* Utilities */}
+      <div>
+        <h3 className="mb-3 text-sm font-semibold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">
+          Utilidades
+        </h3>
+        <div className="rounded-xl border border-neutral-300 bg-white p-4 shadow-sm dark:border-neutral-700 dark:bg-neutral-900">
+          <p className="mb-2 text-sm font-medium text-neutral-700 dark:text-neutral-300">
+            Enlace de la tienda
+          </p>
+          <CopyLinkButton url="https://supermarket-cienfuegos.vercel.app" />
+        </div>
       </div>
     </div>
   );
